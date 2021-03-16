@@ -12,7 +12,6 @@ import plotly.graph_objects as go
 st.sidebar.title("Options")
 option = st.sidebar.selectbox("Which Dashboard?", ("Chart", "Ishares Etf Position Explorer", "Symbol", "ARK Invest Portfolio", "Total Portfolio Holding Calculator"), 0)
 
-#url = r'https://www.ishares.com/ch/qualifizierte-investoren/de/produkte/239705/ishares-phlx-semiconductor-etf/1495092304805.ajax?fileType=csv&fileName=SOXX_holdings&dataType=fund'
 
 #st.title(option)
 
@@ -66,10 +65,14 @@ if option == "Chart":
         fig.update_layout(height=800, width=1000)
         return fig
     
-    fig = plot_data()
-    st.plotly_chart(fig, use_container_width=True)
+    try:
+        fig = plot_data()
+        st.plotly_chart(fig, use_container_width=True)
+        st.write(hist_data)
+    except:
+        st.write("No Plot Data available right now...")
+
     
-    st.write(hist_data)
 
 if option == "Symbol":
     symbol = st.sidebar.text_input(label="Symbol:", value="ASML",)
@@ -112,18 +115,10 @@ if option == "Ishares Etf Position Explorer":
         st.dataframe(df)
 
 if option == "ARK Invest Portfolio":    
-    df = pd.read_csv(r"C:\Users\Michael Hartmann\OneDrive\Spiel des Lebens\Coding\StockApp\Investing\etf_holdings\ARK_INNOVATION_ETF_ARKK_HOLDINGS.csv")
-    df = df.drop(columns=["fund"]).iloc[:-3]
-    st.write(df)
+    
     
 if option == "Total Portfolio Holding Calculator":   
-    try:
-        total_holdings = pd.read_pickle(r"C:\Users\Michael Hartmann\OneDrive\Spiel des Lebens\Investing\etf_holdings_pickles\TotalPortfolioHoldings.pkl")
-    except:
-        total_holdings = pd.read_pickle(r"C:\Users\mhart\OneDrive\Spiel des Lebens\Investing\etf_holdings_pickles\TotalPortfolioHoldings.pkl")
     
-    #st.dataframe(total_holdings)
-    st.table(total_holdings)
 
 
 
