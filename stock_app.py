@@ -115,10 +115,13 @@ if option == "Ishares Etf Position Explorer":
         st.dataframe(df)
 
 if option == "ARK Invest Portfolio":    
-    
+    st.write(option)
+    st.write("Work In Progress...")
+
     
 if option == "Total Portfolio Holding Calculator":   
-    
+    st.write(option)
+    st.write("Work In Progress...")
 
 
 
