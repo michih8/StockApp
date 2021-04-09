@@ -1,0 +1,4 @@
+EUNL.DE;0.40;https://www.ishares.com/de/privatanleger/de/produkte/251882/ishares-msci-world-ucits-etf-acc-fund/1478358465952.ajax?fileType=csv&fileName=EUNL_holdings&dataType=fund
+IS3R.DE;0.2;https://www.ishares.com/de/privatanleger/de/produkte/270051/ishares-msci-world-momentum-factor-ucits-etf/1478358465952.ajax?fileType=csv&fileName=IS3R_holdings&dataType=fund
+AYEM.DE;0.2;https://www.ishares.com/de/privatanleger/de/produkte/305397/fund/1478358465952.ajax?fileType=csv&fileName=AYEM_holdings&dataType=fund
+IUSN.DE;0.2;https://www.ishares.com/de/privatanleger/de/produkte/296576/fund/1478358465952.ajax?fileType=csv&fileName=IUSN_holdings&dataType=fund
