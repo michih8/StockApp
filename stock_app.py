@@ -11,7 +11,7 @@ import io
 
 
 st.sidebar.title("Options")
-option = st.sidebar.selectbox("Which Dashboard?", ("Chart", "Portfolio", "Total Portfolio Holding Calculator", "Ishares Etf Position Explorer", "Symbol", "ARK Invest Portfolio", ), 2)
+option = st.sidebar.selectbox("Which Dashboard?", ("Chart", "Portfolio", "Crypto", "Total Portfolio Holding Calculator", "Ishares Etf Position Explorer", "Symbol", "ARK Invest Portfolio", ), 2)
 
 @st.cache
 def get_ticker_data(symbol, years=3):
@@ -75,6 +75,8 @@ def plot_and_infos(symbol, isEtf=False):
     except:
         st.write("No Plot Data available right now...")
 
+if option == "Crypto":
+    st.image("https://alternative.me/crypto/fear-and-greed-index.png", caption="Fear & Greed Index")
 
 #st.title(option)
 
